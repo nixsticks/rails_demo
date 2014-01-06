@@ -24,4 +24,10 @@ class StudentsController < ApplicationController
     Student.find(params[:id]).destroy
     redirect_to :action => 'all'
   end
+
+   private
+
+    def student_params
+      params.require(:student).permit(:first_name, :last_name)
+    end
 end
