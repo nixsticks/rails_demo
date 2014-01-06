@@ -1,5 +1,5 @@
 <ol>
   <% @students.each do |student| %>
-    <li><%= student.first_name %> <%= student.last_name %></li>
+    <li><%= student.first_name %> <%= student.last_name %> - <%= link_to "Update", "/students/#{student.id}/edit"%>, <%= link_to 'Destroy',  "/students/#{student.id}" , method: :delete, data: { confirm: 'Are you sure?'} %></li>
   <% end %>
 </ol>

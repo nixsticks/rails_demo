@@ -5,6 +5,8 @@ FirstRails::Application.routes.draw do
   get '/students/:id' => 'students#show'
   post '/students' => 'students#create'
   delete '/students/:id' => 'students#destroy'
+  get '/students/:id/edit' => 'students#edit'
+  put '/students/:id' => 'students#update'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
