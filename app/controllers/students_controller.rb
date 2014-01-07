@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find(params[:id])
+    @student = Student.find_name(params[:name])
   end
 
   def create
@@ -22,8 +22,8 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id]) 
-    if @student.update_attributes(student_params)
-      redirect_to "/students/#{@student.id}"
+    if @student.update(student_params)
+      redirect_to 
     else
       render 'edit'
     end
@@ -34,7 +34,7 @@ class StudentsController < ApplicationController
   end
 
   def destroy
-    Student.find(params[:id]).destroy
+    Student.find(params[:id]).delete
     redirect_to :action => 'all'
   end
 

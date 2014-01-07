@@ -3,7 +3,7 @@ FirstRails::Application.routes.draw do
   get '/students' => 'students#all'
   get '/students/new' => 'students#new'
   get '/students/:id' => 'students#show'
-  post '/students' => 'students#create'
+  get '/students' => 'students#create'
   delete '/students/:id' => 'students#destroy'
   get '/students/:id/edit' => 'students#edit'
   put '/students/:id' => 'students#update'
